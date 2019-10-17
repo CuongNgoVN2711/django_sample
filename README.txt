@@ -28,4 +28,5 @@ To config this project, do follow these steps:
 *********
 
 **NOTE**:
+- You won't see the page reset when hitting refresh :v
 - If you intend to run this project on cloud, make searching for "deploy django project on <somewhere> "
