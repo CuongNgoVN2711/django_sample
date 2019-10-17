@@ -1,0 +1,47 @@
+{% comment %} {% block title %}User Lookup{% endblock %}
+
+{% block content %}
+{% for user in user_list %}
+<h2>
+    {{user.name}}   
+</h2>
+{% endfor %}
+{% endblock %} {% endcomment %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %}User Lookup{% endblock %}</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        {% block content %} 
+        <form method="post">
+            {% csrf_token %}
+            {{form}}
+        </form>
+        <form method="get">
+            {% csrf_token %}
+            <button type='submit' name='show_all'> Show all </button>
+        </form>
+        <table >
+            <tr>
+                <th> ID </th>
+                <th> Name </th>
+                <th> Date of Birth </th>
+                <th> Address </th>      
+            </tr>
+            {% for user in user_list %}
+                <tr>
+                    <td> {{user.id }}</td>
+                    <td> {{user.name}} </td>
+                    <td> {{user.birdthday}} </td>
+                    <td> {{user.address}} </td>
+                </tr>
+            {% endfor %}
+        </table>
+        {% endblock %}
+    </div>
+</body>
+</html>
