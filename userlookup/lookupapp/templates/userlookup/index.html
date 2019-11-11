@@ -15,32 +15,40 @@
 </head>
 
 <body>
-    <div class="container-fluid">
+    <div class="col">
         {% block content %} 
-        <form method="post">
+        <form method="post" style="text-align: center;padding: 10px">
             {% csrf_token %}
             {{form}}
         </form>
-        <form method="get">
+        <form method="get" style="text-align: center;padding: 10px" >
             {% csrf_token %}
             <button type='submit' name='show_all'> Show all </button>
         </form>
-        <table >
-            <tr>
-                <th> ID </th>
-                <th> Name </th>
-                <th> Date of Birth </th>
-                <th> Address </th>      
-            </tr>
             {% for user in user_list %}
-                <tr>
-                    <td> {{user.id }}</td>
-                    <td> {{user.name}} </td>
-                    <td> {{user.birdthday}} </td>
-                    <td> {{user.address}} </td>
-                </tr>
+                <table style="width:100%; margin-bottom: 100px">
+                    <tr> 
+                        <td style="text-align: center">
+                            <img src="{{user.image}}" width='500'>
+                        </td>
+                    </tr>
+                    <tr> 
+                        <td style="font-size: 30px; text-align: center">
+                            {{user.name}} 
+                        </td>
+                    </tr>
+                    <tr> 
+                        <td style="text-align: center">
+                            {{user.birdthday}} 
+                        </td>
+                    </tr>
+                    <tr> 
+                        <td style="text-align: center">
+                            {{user.address}} 
+                        </td>
+                    </tr>
+                </table>
             {% endfor %}
-        </table>
         {% endblock %}
     </div>
 </body>

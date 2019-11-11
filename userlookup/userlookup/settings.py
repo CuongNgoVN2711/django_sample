@@ -89,7 +89,11 @@ DATABASES = {
         'PASSWORD': 'cuongtest123',
         'HOST': 'cuongtest.ceohscfzpjq8.us-east-1.rds.amazonaws.com',
         'PORT': '3306',
+        'OPTIONS': {
+                'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+        }
     }
+
 }
 
 # Password validation
