@@ -84,10 +84,10 @@ WSGI_APPLICATION = 'userlookup.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'cuongtest',
+        'NAME': 'quan',
         'USER': 'admin',
-        'PASSWORD': 'cuongtest123',
-        'HOST': 'cuongtest.ceohscfzpjq8.us-east-1.rds.amazonaws.com',
+        'PASSWORD': 'quan1234',
+        'HOST': 'grad-v2.ceohscfzpjq8.us-east-1.rds.amazonaws.com',
         'PORT': '3306',
         'OPTIONS': {
                 'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"

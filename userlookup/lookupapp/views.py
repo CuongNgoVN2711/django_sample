@@ -4,16 +4,7 @@ from django.shortcuts import redirect, render
 
 from .forms import UserLookup
 from .models import User
-
-# def index(request):
-#     user_list = User.objects.all()
-#     template = 'userlookup/index.html'
-#     context = {
-#         'user_list': user_list,
-#         'form': UserLookup()
-#     }
-#     form = UserLookup()
-#     return render(request, template, context)
+import os
 
 def index(request):
     user_list = []
